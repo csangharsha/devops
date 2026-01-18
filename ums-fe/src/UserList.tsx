@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import User from './User';
+import api from './axiosInstance';
 
 interface User {
     userId: String;
@@ -16,7 +16,7 @@ const UserList: React.FC = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get<User[]>('http://localhost:8080/api/users');
+                const response = await api.get<User[]>('/users');
                 setUsers(response.data);
             } catch (error) {
                 console.error('Error fetching users:', error);
@@ -32,7 +32,7 @@ const UserList: React.FC = () => {
             <div className="m-auto w-70 align-items-center d-flex flex-wrap gap-3 m-3">
                 {
                     users.map(user => (
-                        <div key={user.userId}>
+                        <div key={user.userId as string}>
                             <User id={user.userId} firstName={user.firstName} middleName={user.middleName} lastName={user.lastName} username={user.username} />
                         </div>
                     ))

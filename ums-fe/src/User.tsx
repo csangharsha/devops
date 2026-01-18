@@ -14,6 +14,7 @@ const User: React.FC<UserProps> = ({ id, firstName, middleName, lastName, userna
             <Card.Body>
                 <Card.Title>{firstName} {middleName} {lastName}</Card.Title>
                 <Card.Text>Username: {username}</Card.Text>
+                <p className="d-none">ID: {id}</p>
             </Card.Body>
         </Card>
     );
