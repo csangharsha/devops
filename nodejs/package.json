@@ -12,9 +12,14 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "bcryptjs": "^3.0.3",
+    "connect-redis": "^9.0.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mongoose": "^9.1.5",
+    "redis": "^5.10.0"
   },
-  "devDependencies": { 
+  "devDependencies": {
     "nodemon": "^2.0.22"
   }
 }

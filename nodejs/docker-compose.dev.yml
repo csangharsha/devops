@@ -10,4 +10,14 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+      - MONGO_USER=sangharsha
+      - MONGO_PASSWORD=password123
+      - REDIS_URL=redis
+      - REDIS_PORT=6379
+      - SESSION_SECRET=secret
     command: npm run dev
+  
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=sangharsha
+      - MONGO_INITDB_ROOT_PASSWORD=password123
